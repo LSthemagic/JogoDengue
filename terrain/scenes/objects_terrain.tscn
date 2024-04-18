@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdxw7x14ehv81"]
+
+[ext_resource type="Texture2D" uid="uid://dj3d6ji13mw3k" path="res://terrain/assets/objects.png" id="1_a6bpg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uja6y"]
+resource_name = "objects"
+texture = ExtResource("1_a6bpg")
+0:5/size_in_atlas = Vector2i(3, 4)
+0:5/0 = 0
+0:5/0/texture_origin = Vector2i(0, 18)
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.56847, 8, -5.74524, 8, -3.44715, 11.0485, -0.972272, 11.9324, 2.56326, 9.45755, 4.33103, 9.98788, 7.86656, -8, 8, -12.1092, 2.91681, -11.2253, -3.44715)
+10:7/size_in_atlas = Vector2i(2, 2)
+10:7/0 = 0
+10:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:7/0/physics_layer_0/angular_velocity = 0.0
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.3943, -3.38604, -8, -5.27592, -4.56721, -6.69333, -1.10243, -8, 5.66964, -8, 8, -3.07106, 13.2292, 4.17349, 9.76439, 5.43341, 8, 2.75608, 9.76439, 9.05569, 6.92957, 9.84313, 3.93725, 9.37066, 1.5749, 6.37835, 0.15749, 10.1581, -4.40972, 9.37066, -6.92957, 8, -6.14211, 5.90588, -10.0794, 6.53584, -11.8118, 4.64596, -11.8118, -0.393724)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.36235, -6.22086, -8, 1.33867, 1.25992, 8, 6.14212, 2.4411, 4.25224, -4.80345)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.29961, -5.74839, 6.29961, -5.5909, 6.29961, 1.81114, 1.73239, 2.12612, 1.41741, 4.64596, -1.41741, 4.17349, -1.41741, 1.81114, -5.51216, 1.96863)
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.4571, -4.64596, 6.29961, -4.96094, 6.61459, 6.22086, -6.61459, 5.5909)
+10:0/size_in_atlas = Vector2i(2, 1)
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.434, -7.48078, 15.1191, -7.95325, 14.9616, 4.016, -15.1191, 3.70102)
+11:2/size_in_atlas = Vector2i(1, 2)
+11:2/0 = 0
+11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:2/0/physics_layer_0/angular_velocity = 0.0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.87451, -14.8828, 7.40203, -15.5128, 6.29961, 13.6229, -6.4571, 13.3079)
+8:6/size_in_atlas = Vector2i(2, 3)
+8:6/0 = 0
+8:6/0/texture_origin = Vector2i(0, 14)
+8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:6/0/physics_layer_0/angular_velocity = 0.0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.18118, -8, 4.17349, -5.66965, 10.4731, 1.5749, 11.733, 6.4571, 10.0006, 8, 5.11843, 6.61459, 0.236237, 3.46478, -1.02369)
+6:7/size_in_atlas = Vector2i(2, 2)
+6:7/0 = 0
+6:7/0/texture_origin = Vector2i(0, 5)
+6:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:7/0/physics_layer_0/angular_velocity = 0.0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.2765, -2.4411, -16.2215, 7.1658, -9.6069, 10.3156, 9.6069, 10.1581, 16.5365, 7.00831, 15.2765, -5.27592, -15.2765, -5.90588)
+
+[sub_resource type="TileSet" id="TileSet_3f2a4"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_uja6y")
+
+[node name="Objects_terrain" type="TileMap"]
+tile_set = SubResource("TileSet_3f2a4")
+format = 2
