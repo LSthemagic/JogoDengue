@@ -1,7 +1,9 @@
 extends CharacterBody2D
+class_name Character
 
 var _state_machine
 var _is_attacking: bool = false
+var _is_dead: bool = false
 
 @export_category("Variables")
 @export_category("Objects")
@@ -18,6 +20,8 @@ func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]
 
 func  _physics_process(_delta: float) -> void:
+	if _is_dead:
+		return
 	_move()
 	_attack()
 	_animate()
@@ -49,6 +53,7 @@ func _attack() -> void:
 		_is_attacking = true
 
 func _animate() -> void:
+	
 	if _is_attacking:
 		_state_machine.travel("attack")
 		return
@@ -66,4 +71,10 @@ func _on_attack_timer_timeout():
 
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.update_health(randi_range(1,5))
+		body.update_health()
+
+func die() -> void:
+	_is_dead = true
+	_state_machine.travel("death")
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()
