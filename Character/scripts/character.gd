@@ -5,6 +5,12 @@ var _state_machine
 var _is_attacking: bool = false
 var _is_dead: bool = false
 
+var _health: float = 100.0
+var _max_health: float = 100.0
+var _health_recovery: float = 1.0
+
+signal character_stats_changed
+
 @export_category("Variables")
 @export_category("Objects")
 
@@ -16,8 +22,9 @@ var _is_dead: bool = false
 @export var _animation_tree: AnimationTree = null
 
 func _ready() -> void:
+	emit_signal("character_stats_changed", self)
 	_animation_tree.active = true
-	_state_machine = _animation_tree["parameters/playback"]
+	_state_machine = _animation_tree["parameters/playback"] 
 
 func  _physics_process(_delta: float) -> void:
 	if _is_dead:
@@ -74,7 +81,19 @@ func _on_attack_area_body_entered(body):
 		body.update_health()
 
 func die() -> void:
+	if _health >= 10:
+		_health = _health - 10
+		emit_signal("character_stats_changed",self)
+		return
+	
 	_is_dead = true
 	_state_machine.travel("death")
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
+
+func treatment(delta: float) -> void:
+	print(delta)
+	var _new_health = min(_health + _health_recovery * delta, _max_health)
+	if _new_health != _health:
+		_health = _new_health
+		emit_signal("character_stats_changed",self)
