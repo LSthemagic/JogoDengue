@@ -92,7 +92,6 @@ func die() -> void:
 	get_tree().reload_current_scene()
 
 func treatment(delta: float) -> void:
-	print(delta)
 	var _new_health = min(_health + _health_recovery * delta, _max_health)
 	if _new_health != _health:
 		_health = _new_health

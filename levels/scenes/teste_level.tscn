@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlxyq65g3vhi1"]
+[gd_scene load_steps=8 format=3 uid="uid://dlxyq65g3vhi1"]
 
 [ext_resource type="PackedScene" uid="uid://cx1o5ergntal1" path="res://terrain/scenes/terrain.tscn" id="1_8h4cm"]
 [ext_resource type="PackedScene" uid="uid://dyo0hl6bdiwgm" path="res://terrain/scenes/interior.tscn" id="2_kamyy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdxw7x14ehv81" path="res://terrain/scenes/objects_terrain.tscn" id="3_y3m8w"]
 [ext_resource type="PackedScene" uid="uid://ucpo1c6jyt8i" path="res://components/scenes/door_component.tscn" id="5_qumox"]
 [ext_resource type="PackedScene" uid="uid://duhh3fjirvptq" path="res://Character/scenes/enemy.tscn" id="6_d3gx3"]
+[ext_resource type="PackedScene" uid="uid://dy6yb3nlpudpu" path="res://doctor/scenes/doctor.tscn" id="7_de7qn"]
 
 [node name="level" type="Node2D"]
 position = Vector2(-8, 0)
@@ -57,3 +58,6 @@ position = Vector2(-16, 248)
 
 [node name="Enemy5" parent="YSort" instance=ExtResource("6_d3gx3")]
 position = Vector2(504, 48)
+
+[node name="Doctor" parent="YSort" instance=ExtResource("7_de7qn")]
+position = Vector2(5840, 4312)

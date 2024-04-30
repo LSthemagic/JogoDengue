@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://cxdydp4xugffv"]
+
+[ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="1_wh5v2"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_o2u1i"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_pkv8u"]
+
+[sub_resource type="Resource" id="Resource_vncji"]
+script = ExtResource("2_o2u1i")
+scene = ExtResource("1_wh5v2")
+overrides = {
+"box_modulate_custom_color": "Color(0.470588, 0.317647, 0.164706, 1)",
+"box_size": "Vector2(260, 60)",
+"name_label_custom_size": "5.0",
+"name_label_use_global_size": "false",
+"text_custom_size": "7.0",
+"text_use_global_size": "false"
+}
+
+[resource]
+script = ExtResource("3_pkv8u")
+name = "person_main_style"
+base_overrides = {
+"global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
+}
+layers = Array[ExtResource("2_o2u1i")]([SubResource("Resource_vncji")])
+metadata/_latest_layer = 0

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=7 format=3 uid="uid://dir70y07nsm40"]
+
+[ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="1_vawse"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_k1nny"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_2wc0f"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="3_dpcbv"]
+
+[sub_resource type="Resource" id="Resource_qmt7b"]
+script = ExtResource("2_k1nny")
+scene = ExtResource("1_vawse")
+overrides = {
+"box_modulate_custom_color": "Color(0, 0.443137, 0.647059, 1)",
+"box_modulate_global_color": "false",
+"box_size": "Vector2(260, 60)",
+"name_label_custom_size": "5.0",
+"name_label_use_global_size": "false",
+"portrait_position": "1",
+"text_custom_size": "7.0",
+"text_use_global_size": "false"
+}
+
+[sub_resource type="Resource" id="Resource_b4uwr"]
+script = ExtResource("2_k1nny")
+scene = ExtResource("3_dpcbv")
+overrides = {
+"disabled": "true",
+"font_size_custom": "5.0",
+"font_size_use_global": "false",
+"text_color_custom": "Color(0.0235294, 1, 1, 1)",
+"text_color_disabled": "Color(0.0509804, 0.0823529, 0.588235, 1)",
+"text_color_focused": "Color(0.223529, 0.835294, 0.0509804, 1)",
+"text_color_hovered": "Color(0, 0.34902, 0.745098, 1)",
+"text_color_pressed": "Color(0.0235294, 1, 1, 1)",
+"text_color_use_global": "false"
+}
+
+[resource]
+script = ExtResource("3_2wc0f")
+name = "doctor_style"
+base_overrides = {
+"global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
+}
+layers = Array[ExtResource("2_k1nny")]([SubResource("Resource_qmt7b"), SubResource("Resource_b4uwr")])
+metadata/_latest_layer = 1

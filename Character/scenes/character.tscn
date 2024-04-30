@@ -958,7 +958,7 @@ color = Color(0.74902, 0, 0, 1)
 position = Vector2(0, 5)
 sprite_frames = SubResource("SpriteFrames_8ceny")
 autoplay = "default"
-frame_progress = 0.659342
+frame_progress = 0.846626
 
 [connection signal="character_stats_changed" from="." to="health" method="_on_character_character_stats_changed"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
