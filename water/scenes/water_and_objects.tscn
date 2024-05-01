@@ -2128,6 +2128,5 @@ sources/1 = SubResource("TileSetAtlasSource_yt6ko")
 tile_set = SubResource("TileSet_iu34u")
 format = 2
 layer_0/name = "objects"
-layer_0/z_index = 10
 layer_1/name = "terrain"
 layer_1/tile_data = PackedInt32Array()

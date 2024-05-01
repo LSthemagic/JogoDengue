@@ -9,7 +9,6 @@ var _isConversation: bool = false
 
 @export_category("Objects")
 
-
 func _process(delta: float):
 	if _isConversation:
 		if _player_ref is Character:
