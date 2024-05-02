@@ -11,17 +11,33 @@
 [ext_resource type="PackedScene" uid="uid://dy6yb3nlpudpu" path="res://doctor/scenes/doctor.tscn" id="7_de7qn"]
 
 [sub_resource type="GDScript" id="GDScript_g1d2h"]
-script/source = "extends Node2D
+script/source = "extends Node
 
+# Carregue a cena do inimigo
+var enemy_scene = preload(\"res://Character/scenes/enemy.tscn\")
 
-# Called when the node enters the scene tree for the first time.
+# Lista de posições onde os inimigos serão instanciados
+var enemy_positions = [
+	Vector2(320, 120),
+	Vector2(472, 312),
+	Vector2(200, 112),
+	Vector2(104, 304),
+	Vector2(776, -16),
+	Vector2(720, -40),
+	Vector2(904, 304)
+]
+
 func _ready():
-	pass # Replace with function body.
+	# Itera sobre a lista de posições
+	for pos in enemy_positions:
+		# Instancia o inimigo
+		var enemy_instance = enemy_scene.instantiate()
 
+		# Define a posição do inimigo
+		enemy_instance.position = pos
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+		# Adiciona o inimigo à cena atual
+		add_child(enemy_instance)
 "
 
 [node name="level" type="Node2D"]
@@ -46,7 +62,7 @@ layer_0/tile_data = PackedInt32Array(-458722, 393216, 3, -458721, 393216, 3, -39
 layer_1/tile_data = PackedInt32Array(-327648, 589824, 11, -262113, 458752, 11, -458789, 458752, 11, -458787, 589824, 11, -262169, 589824, 11, 983081, 589824, 11, 983082, 655360, 10, 1048618, 720896, 11, 1048617, 589824, 12, 1114103, 262144, 9, 1114104, 655360, 10, 1179640, 524288, 11, 655381, 589824, 11, 720917, 524288, 12, 720915, 524288, 12, 655379, 524288, 11, 786452, 393216, 12, 262136, 458752, 12, 196605, 524288, 12, 262140, 655360, 10, 262139, 655360, 10, 131068, 393216, 12, 196603, 458752, 11, 131063, 655360, 10, 131065, 655360, 10, 131064, 720896, 11)
 layer_2/tile_data = PackedInt32Array(-262112, 720896, 11, 1114103, 458752, 12)
 layer_3/tile_data = PackedInt32Array(589842, 65536, 10, 589843, 65536, 10, 589844, 262144, 11, 655380, 262144, 12, 589845, 196608, 10, 720916, 720896, 11, 589841, 65536, 10, 131062, 0, 12, 131063, 0, 12, 131064, 0, 12, 131065, 0, 12, 131066, 0, 12, 131067, 327680, 10)
-layer_4/tile_data = PackedInt32Array(589841, 65536, 10, 262135, 458752, 12, 262136, 720896, 11, 262140, 589824, 11, 196603, 524288, 12, 131063, 589824, 11, 131064, 589824, 11, 131065, 589824, 11, 196601, 458752, 11)
+layer_4/tile_data = PackedInt32Array(589841, 65536, 10, 262135, 458752, 12, 262136, 720896, 11, 262140, 589824, 11, 196603, 524288, 12, 131063, 589824, 11, 131065, 589824, 11, 196601, 458752, 11)
 
 [node name="components" type="Node2D" parent="."]
 
@@ -54,14 +70,12 @@ layer_4/tile_data = PackedInt32Array(589841, 65536, 10, 262135, 458752, 12, 2621
 position = Vector2(473, 248)
 _teleport_position = Vector2(5728, 4264)
 
-[node name="DoorComponent3" parent="components" node_paths=PackedStringArray("_animation") instance=ExtResource("5_qumox")]
-position = Vector2(88, 104)
-_teleport_position = Vector2(5728, 4264)
-_animation = NodePath("../DoorComponent/Animation")
-
 [node name="DoorComponent2" parent="components" instance=ExtResource("5_qumox")]
 position = Vector2(5736, 4224)
 _teleport_position = Vector2(464, 272)
+
+[node name="DoorComponent3" parent="components" instance=ExtResource("5_qumox")]
+position = Vector2(88, 104)
 
 [node name="YSort" type="Node2D" parent="."]
 z_index = 1
@@ -79,9 +93,6 @@ position = Vector2(432, 296)
 
 [node name="Enemy" parent="YSort" instance=ExtResource("6_d3gx3")]
 position = Vector2(328, 304)
-
-[node name="Enemy2" parent="YSort" instance=ExtResource("6_d3gx3")]
-position = Vector2(608, 296)
 
 [node name="Doctor" parent="YSort" instance=ExtResource("7_de7qn")]
 position = Vector2(5840, 4312)

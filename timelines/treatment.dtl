@@ -5,9 +5,9 @@ main_person (Zé Godot): Febre alta, dores musculares intensas, dor de cabeça, 
 \doctor_person (Dr. Grauzio Galot): Bem zé, isso são sintomas de dengue.\
 Além disso tem outros sintomas\:\
 Dor ao movimentar os olhos, náuseas e vômitos, manchas vermelhas ou erupções na pele e em casos agudos sangramento leve, como gengivas sangrando.
-main_person (Zé Godot): Eu não sinto esses sintomas Dr. Apenas o que já lhe falei, o que devo fazer?
-\doctor_person (Dr. Grauzio Galot): Descanse bastante, se hidrate com água, sucos naturais, água de coco, e evite bebidas com cafeína, que podem levar à desidratação.\
-\
-A medicação para a febre e dor é em basede medicamentos como paracetamol podem ajudar a reduzir a febre e aliviar a dor muscular e de cabeça. No entanto, é importante não tomar aspirina ou anti-inflamatórios não esteroides (AINEs), pois podem aumentar o risco de complicações hemorrágicas em casos de dengue.
-main_person (Zé Godot): Muito obrigado Dr.
+main_person (Zé Godot): Eu não sinto esses sintomas doutor, apenas o que já lhe falei, o que devo fazer?
+\doctor_person (Dr. Grauzio Galot): Descanse bastante, se hidrate com água, sucos naturais, água de coco, e evite bebidas com cafeína, que podem levar à desidratação.
+main_person (Zé Godot): Em relação a medicação, o senhor pode me explicar quais medicamentos eu poderia esta utilizando?
+\doctor_person (Dr. Grauzio Galot): A medicação para a febre e dor é em base de medicamentos como paracetamol podem ajudar a reduzir a febre e aliviar a dor muscular e de cabeça. No entanto, é importante não tomar aspirina ou anti-inflamatórios não esteroides (AINEs), pois podem aumentar o risco de complicações hemorrágicas em casos de dengue.
+main_person (Zé Godot): Esta certo, muito obrigado doutor Grauzio.
 [end_timeline]

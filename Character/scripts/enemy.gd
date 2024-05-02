@@ -3,8 +3,7 @@ class_name Enemy
 
 var _player_ref = null
 var _is_dead: bool = false
-var _canDieAgain: bool = true
-var _enemyesDead: int = 0 
+var _canDieAgain: bool = true 
 @export_category("Objects")
 @export var _texture: Sprite2D = null
 @export var _animation: AnimationPlayer = null
@@ -55,10 +54,6 @@ func _animate() -> void:
 func update_health() -> void:
 	_is_dead = true
 	_animation.play("death")
-	_enemyesDead += 1
-	print(_enemyesDead)
-	if _enemyesDead == 2 :
-		print("os filhadaputa morreu")
 
 func _on_animation_finished(_anim_name: String):
 	queue_free()
