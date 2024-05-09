@@ -9,6 +9,8 @@ var _health: float = 100.0
 var _max_health: float = 100.0
 var _health_recovery: float = 1.0
 
+var _enemies_dead: int = 0
+
 signal character_stats_changed
 
 @export_category("Variables")
@@ -25,6 +27,7 @@ func _ready() -> void:
 	emit_signal("character_stats_changed", self)
 	_animation_tree.active = true
 	_state_machine = _animation_tree["parameters/playback"] 
+	
 
 func  _physics_process(_delta: float) -> void:
 	if _is_dead:
@@ -79,6 +82,8 @@ func _on_attack_timer_timeout():
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy"):
 		body.update_health()
+		_enemies_dead += 1
+		
 
 func die() -> void:
 	if _health >= 10:
@@ -87,6 +92,7 @@ func die() -> void:
 		return
 	
 	_is_dead = true
+	_enemies_dead = 0
 	_state_machine.travel("death")
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()

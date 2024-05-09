@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj3d6ji13mw3k"
-path="res://.godot/imported/objects.png-80462b459f1f1102d95f2235fc40e2f0.ctex"
+uid="uid://ernsj7vdhcle"
+path="res://.godot/imported/FieldsTileset.png-0bf918fa73a402bfb1f835fd0df43ce5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://terrain/assets/objects.png"
-dest_files=["res://.godot/imported/objects.png-80462b459f1f1102d95f2235fc40e2f0.ctex"]
+source_file="res://terrain/assets/base_terrain/FieldsTileset.png"
+dest_files=["res://.godot/imported/FieldsTileset.png-0bf918fa73a402bfb1f835fd0df43ce5.ctex"]
 
 [params]
 

@@ -22,7 +22,6 @@ func _on_detection_area_body_entered(_body) -> void:
 		_player_ref = _body
 		Dialogic.start("treatment")
 		get_viewport().set_input_as_handled()
-		get_tree().create_timer(3.0).timeout
 		_isConversation = true
 
 
