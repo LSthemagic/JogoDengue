@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2esxnfid2kwg"
-path="res://.godot/imported/doctor_ch.png-100e69b77bd470f2b5a7df601fdbc438.ctex"
+uid="uid://bpdbb6hivl7ut"
+path="res://.godot/imported/health_agent.png-e50dbefc46111bf6e009ac2b0785d274.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://doctor/doctor_ch.png"
-dest_files=["res://.godot/imported/doctor_ch.png-100e69b77bd470f2b5a7df601fdbc438.ctex"]
+source_file="res://Character/assets/health_agent.png"
+dest_files=["res://.godot/imported/health_agent.png-e50dbefc46111bf6e009ac2b0785d274.ctex"]
 
 [params]
 

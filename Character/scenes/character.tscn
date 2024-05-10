@@ -1,9 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://c2327eychwja3"]
+[gd_scene load_steps=50 format=3 uid="uid://c2327eychwja3"]
 
 [ext_resource type="Script" path="res://Character/scripts/character.gd" id="1_gfi2n"]
 [ext_resource type="Texture2D" uid="uid://ccdr6io5misoc" path="res://Character/assets/player.png" id="2_14xie"]
 [ext_resource type="Texture2D" uid="uid://u8wbo4x00k7t" path="res://Character/assets/heart.png" id="3_glrun"]
 [ext_resource type="Script" path="res://Character/scripts/health.gd" id="3_robtx"]
+[ext_resource type="Script" path="res://Character/scripts/Label.gd" id="5_dlgij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxe7l"]
 size = Vector2(12, 4)
@@ -892,6 +893,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_tmdm6"]
+font_size = 7
+
 [node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_attack_timer", "_animation_tree") groups=["character"]]
 script = ExtResource("1_gfi2n")
 _attack_timer = NodePath("AttackTimer")
@@ -960,6 +964,15 @@ sprite_frames = SubResource("SpriteFrames_8ceny")
 autoplay = "default"
 frame_progress = 0.846626
 
+[node name="Label" type="Label" parent="."]
+offset_left = -147.0
+offset_top = -68.0
+offset_right = -63.0
+offset_bottom = -55.0
+label_settings = SubResource("LabelSettings_tmdm6")
+script = ExtResource("5_dlgij")
+
 [connection signal="character_stats_changed" from="." to="health" method="_on_character_character_stats_changed"]
+[connection signal="character_stats_changed" from="." to="Label" method="_on_character_character_stats_changed"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy6yb3nlpudpu"]
 
 [ext_resource type="Script" path="res://doctor/scripts/doctor.gd" id="1_74rp8"]
-[ext_resource type="Texture2D" uid="uid://b2esxnfid2kwg" path="res://doctor/doctor_ch.png" id="1_u3mn7"]
+[ext_resource type="Texture2D" uid="uid://xax4txuhsohg" path="res://doctor/assets/doctor.png" id="2_v7w1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0b12"]
-size = Vector2(17, 24.75)
+size = Vector2(17, 32.1875)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjjbo"]
 radius = 33.0
@@ -13,18 +13,18 @@ radius = 33.0
 script = ExtResource("1_74rp8")
 
 [node name="texture" type="Sprite2D" parent="."]
-position = Vector2(3, -11)
-scale = Vector2(0.0337343, 0.0470546)
-texture = ExtResource("1_u3mn7")
+position = Vector2(1, -14)
+scale = Vector2(0.0742915, 0.0720261)
+texture = ExtResource("2_v7w1y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -11.625)
+position = Vector2(2, -12.0938)
 shape = SubResource("RectangleShape2D_u0b12")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(1, -10)
+position = Vector2(1, -12)
 shape = SubResource("CircleShape2D_qjjbo")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

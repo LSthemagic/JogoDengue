@@ -4,7 +4,7 @@ class_name Doctor
 var _player_ref: Character = null
 var _time_since_heal: float = 0.0
 var _heal_interval: float = 2.0
-var _heal_amount: int = 2
+var _heal_amount: int = 5
 var _isConversation: bool = false
 
 @export_category("Objects")

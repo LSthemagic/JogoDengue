@@ -2,10 +2,7 @@ extends TileMap
 class_name Water_Class
 
 var character = null
-var proximityDistance = 105
-var character_position = null
 var tilemap_position = null
-var distance = null
 var water_tile_positions = [
 					Vector2(568, 240),
 					Vector2(30, 40),
@@ -21,22 +18,10 @@ func _ready():
 		character = characters[0]
 
 func _process(_delta)->void:
-	print(character._enemies_dead)
-	if character != null and character._enemies_dead > 34:
-		# Obtém a posição do personagem uma vez
-		character_position = character.global_position
+	if character != null and character._is_remove_water:
 		for i in range(get_layers_count()):
-			if get_layer_name(i) == "water" or get_layer_name(i) == "objects" :
-				#var tile_size = get_used_cells(0).size()
+			if get_layer_name(i) == "water" or get_layer_name(i) == "objects" or get_layer_name(i) == "extra":
 				for water_tile_position in water_tile_positions:
-					# Calcula a distância do personagem à posição do tile de água
-					distance = character_position.distance_to(water_tile_position)
-					#print("distance: ",distance)
-					if distance < proximityDistance:
-						print("Está na água")
-						# Remove a camada se estiver na água
-						#var cell = local_to_map(water_tile_position)
-						#set_cell(i, water_tile_position, -1)
-						set_layer_enabled(i,false)
-						#remove_layer(i)
-						break  # Sai do loop após remover a camada
+					#set_layer_enabled(i,false)
+					remove_layer(i)
+					break

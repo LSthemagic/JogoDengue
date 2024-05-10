@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b60cktur6i63f"]
+
+[ext_resource type="Script" path="res://health_agent/scripts/health_agent.gd" id="1_ain7m"]
+[ext_resource type="Texture2D" uid="uid://dxspkxdiyq1m1" path="res://health_agent/assets/health_agent.png" id="2_8ur4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l282k"]
+size = Vector2(12, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rg2j4"]
+radius = 21.0238
+
+[node name="health_agent" type="CharacterBody2D"]
+script = ExtResource("1_ain7m")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(-2.32458e-06, -13)
+scale = Vector2(0.0554593, 0.0646651)
+texture = ExtResource("2_8ur4l")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_l282k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_rg2j4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

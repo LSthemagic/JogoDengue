@@ -1703,4 +1703,6 @@ layer_2/name = "waves"
 layer_2/tile_data = PackedInt32Array()
 layer_3/name = "plumbing"
 layer_3/tile_data = PackedInt32Array()
+layer_4/name = "extra"
+layer_4/tile_data = PackedInt32Array()
 script = ExtResource("2_73ija")

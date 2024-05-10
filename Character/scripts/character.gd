@@ -10,6 +10,10 @@ var _max_health: float = 100.0
 var _health_recovery: float = 1.0
 
 var _enemies_dead: int = 0
+var _mission_passed: bool = false
+@warning_ignore("unused_private_class_variable")
+var _is_remove_water: bool = false
+
 
 signal character_stats_changed
 
@@ -27,7 +31,6 @@ func _ready() -> void:
 	emit_signal("character_stats_changed", self)
 	_animation_tree.active = true
 	_state_machine = _animation_tree["parameters/playback"] 
-	
 
 func  _physics_process(_delta: float) -> void:
 	if _is_dead:
@@ -83,7 +86,11 @@ func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy"):
 		body.update_health()
 		_enemies_dead += 1
-		
+		#get_survivors_enemies()
+		if _enemies_dead == 2:
+			Dialogic.start("instruction_mission")
+			get_viewport().set_input_as_handled()
+			_mission_passed = true
 
 func die() -> void:
 	if _health >= 10:
@@ -102,3 +109,10 @@ func treatment(delta: float) -> void:
 	if _new_health != _health:
 		_health = _new_health
 		emit_signal("character_stats_changed",self)
+
+#func get_survivors_enemies() -> int:
+	#var survivors_enemies = 35 - _enemies_dead
+	#print(survivors_enemies)
+	#return survivors_enemies
+
+
