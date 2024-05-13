@@ -146,6 +146,9 @@ layer_0/tile_data = PackedInt32Array(917518, 393217, 7, 1048584, 655361, 0, -393
 
 [node name="Character" parent="YSort" instance=ExtResource("2_oclgm")]
 position = Vector2(432, 296)
+_move_speed = 64.0
+_friction = 0.8
+_acceleration = 0.4
 
 [node name="Enemy" parent="YSort" instance=ExtResource("6_d3gx3")]
 position = Vector2(328, 304)

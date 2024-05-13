@@ -21,16 +21,21 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"aviso_main_person": "res://timelines/persons/images/aviso_main_person.dch",
 "doctor_person": "res://timelines/persons/images/doctor_person.dch",
 "godot_admin": "res://timelines/styles/godot_admin.dch",
 "health_agent": "res://timelines/persons/images/health_agent.dch",
 "main_person": "res://timelines/persons/images/main_person.dch"
 }
 directories/dtl_directory={
+"aviso": "res://timelines/aviso.dtl",
 "instruction_mission": "res://timelines/timeline/instruction_mission.dtl",
 "mission_incomplete": "res://timelines/timeline/mission_incomplete.dtl",
 "mission_passed": "res://timelines/timeline/mission_passed.dtl",
-"treatment": "res://timelines/timeline/treatment.dtl"
+"treatment": "res://timelines/timeline/treatment.dtl",
+"treatment_easy": "res://timelines/timeline/treatment_easy.dtl",
+"treatment_hard": "res://timelines/timeline/treatment_hard.dtl",
+"treatment_medium": "res://timelines/timeline/treatment_medium.dtl"
 }
 variables={}
 text/letter_speed=0.05

@@ -20,7 +20,15 @@ func _process(delta: float):
 func _on_detection_area_body_entered(_body) -> void:
 	if _body.is_in_group("character"):
 		_player_ref = _body
-		Dialogic.start("treatment")
+		var _health = _player_ref._health
+		if _health >= 80:
+			Dialogic.start("treatment_easy")
+		elif _health >= 60 and _health < 80:
+			Dialogic.start("treatment_medium")
+		elif _health >= 40 and _health < 60:
+			Dialogic.start("treatment")
+		elif _health < 40:
+			Dialogic.start("treatment_hard")
 		get_viewport().set_input_as_handled()
 		_isConversation = true
 
