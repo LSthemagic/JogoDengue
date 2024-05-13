@@ -28,6 +28,7 @@ signal character_stats_changed
 @export var _animation_tree: AnimationTree = null
 
 func _ready() -> void:
+	var _time = Timer.new()
 	emit_signal("character_stats_changed", self)
 	_animation_tree.active = true
 	_state_machine = _animation_tree["parameters/playback"] 
@@ -103,7 +104,7 @@ func die() -> void:
 	_enemies_dead = 0
 	_state_machine.travel("death")
 	await get_tree().create_timer(1.0).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://user_interface/scenes/game_over.tscn")
 
 func treatment(delta: float) -> void:
 	var _new_health = min(_health + _health_recovery * delta, _max_health)
