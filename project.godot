@@ -27,10 +27,10 @@ directories/dch_directory={
 "main_person": "res://timelines/persons/images/main_person.dch"
 }
 directories/dtl_directory={
-"instruction_mission": "res://timelines/instruction_mission.dtl",
-"mission_incomplete": "res://timelines/mission_incomplete.dtl",
-"mission_passed": "res://timelines/mission_passed.dtl",
-"treatment": "res://timelines/treatment.dtl"
+"instruction_mission": "res://timelines/timeline/instruction_mission.dtl",
+"mission_incomplete": "res://timelines/timeline/mission_incomplete.dtl",
+"mission_passed": "res://timelines/timeline/mission_passed.dtl",
+"treatment": "res://timelines/timeline/treatment.dtl"
 }
 variables={}
 text/letter_speed=0.05
@@ -65,6 +65,12 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[importer_defaults]
+
+mp3={
+"loop": true
+}
 
 [input]
 

@@ -5,8 +5,8 @@ func _ready():
 	pass
 # Chamado sempre que o sinal character_stats_changed é emitido pelo Character.
 func _process(_delta):
-	var _text_label = str("Inimigos restantes",35 - _character._enemies_dead)
-	if(35 - _character._enemies_dead <= 34):
+	var _text_label = str("INIMIGOS: ",35 - _character._enemies_dead)
+	if(35 - _character._enemies_dead <= 10):
 		_text_label = str("Vá ao Agente de saúde,\nos inimigos podem voltar.")
 	text = _text_label
 
