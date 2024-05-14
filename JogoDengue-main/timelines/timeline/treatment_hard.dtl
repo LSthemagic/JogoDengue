@@ -1,0 +1,6 @@
+main_person (Zé Godot): Doutor Grauzio, estou me sentindo muito mal e acho que pode ser dengue.
+\doctor_person (Dr. Grauzio Galot): Oi, Zé. Quais são os sintomas que você está enfrentando?
+main_person (Zé Godot): Estou com febre alta, fortes dores musculares, dor de cabeça intensa, fadiga extrema, náuseas persistentes, vômito frequente e apresento sinais de sangramento, como manchas na pele.
+\doctor_person (Dr. Grauzio Galot): Isso é muito preocupante. Mais alguma coisa?
+main_person (Zé Godot): Não, doutor, só isso. O que devo fazer?
+\doctor_person (Dr. Grauzio Galot): Zé, você precisa ser hospitalizado imediatamente. Esses sintomas indicam uma dengue grave. Não espere, vá para o hospital agora mesmo. Estarei coordenando com a equipe médica para garantir que você receba o tratamento adequado o mais rápido possível.

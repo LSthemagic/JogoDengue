@@ -1,0 +1,6 @@
+main_person (Zé Godot): Olá, doutor Grauzio, estou com alguns sintomas que me deixaram preocupado.
+\doctor_person (Dr. Grauzio Galot): Oi, Zé. Quais são esses sintomas?
+main_person (Zé Godot): Estou com febre baixa, dores musculares leves e um pouco de cansaço. Além disso, notei uma leve irritação nos olhos.
+\doctor_person (Dr. Grauzio Galot): Parece que você pode ter uma forma leve de dengue. Mais alguma coisa?
+main_person (Zé Godot): Não, doutor, só esses. O que devo fazer?
+\doctor_person (Dr. Grauzio Galot): Descanse bastante, beba bastante líquido e monitore seus sintomas. Se algo mudar, volte a me procurar.

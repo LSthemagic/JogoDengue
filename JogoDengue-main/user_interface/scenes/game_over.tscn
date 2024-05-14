@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://swew0jd6bl4l"]
+
+[ext_resource type="Script" path="res://user_interface/game_over.gd" id="1_1i72m"]
+[ext_resource type="Texture2D" uid="uid://ba67h3kjfeq70" path="res://assets/bg-game.jpg" id="1_7nbgw"]
+[ext_resource type="Texture2D" uid="uid://bh76g1myve41a" path="res://assets/logo.png" id="2_e272p"]
+[ext_resource type="Texture2D" uid="uid://cq75k04t3314j" path="res://assets/failed_person.png" id="3_3h15x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nipqv"]
+bg_color = Color(0, 0.435294, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.89515e-07, 0.24758, 5.29438e-07, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2du8s"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0.435294, 0, 1)
+border_color = Color(1.89515e-07, 0.24758, 5.29438e-07, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a5nw"]
+content_margin_bottom = 3.0
+bg_color = Color(0.545098, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.376471, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2awfs"]
+bg_color = Color(0.605676, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.376471, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 3
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1i72m")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_7nbgw")
+expand_mode = 3
+
+[node name="logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 94.0
+texture = ExtResource("2_e272p")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 95
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="reload" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_nipqv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2du8s")
+text = "Tentar Novamente"
+
+[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5a5nw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2awfs")
+text = "Sair do jogo"
+
+[node name="person" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("3_3h15x")
+expand_mode = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
