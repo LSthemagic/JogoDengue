@@ -1,6 +1,6 @@
-main_person (Zé Godot): Olá doutor Dralziu, digo Grauzio. Descupe-me!\
+main_person (Zé Godot): Olá doutor Drauzio, digo Grauzio.\
 Bem estou com alguns sintomas preocupantes e gostaria da sua ajuda, se possível.
-\doctor_person (Dr. Grauzio Galot): Claro, Zé. Descreva o que está sentindo, por favor.
+\doctor_person (Dr. Grauzio Galot): Bem engraçado Zé. Descreva o que está sentindo, por favor.
 main_person (Zé Godot): Estou com febre alta, fortes dores musculares, dor de cabeça intensa, fadiga e fraqueza, além de perda de apetite.
 \doctor_person (Dr. Grauzio Galot): Parece que você pode estar com dengue. Além desses sintomas, você percebeu mais alguma coisa?
 main_person (Zé Godot): Não, doutor, apenas esses que mencionei. O que devo fazer?

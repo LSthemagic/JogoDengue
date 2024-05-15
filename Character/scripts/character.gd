@@ -14,7 +14,6 @@ var _mission_passed: bool = false
 @warning_ignore("unused_private_class_variable")
 var _is_remove_water: bool = false
 
-var _is_avised: bool = false
 
 signal character_stats_changed
 
@@ -96,11 +95,7 @@ func _on_attack_area_body_entered(body):
 			_mission_passed = true
 
 func die() -> void:
-	if _health>=90 and !_is_avised:
-		_is_avised = true
-		Dialogic.start("aviso")
-		
-		
+	
 	if _health >= 10:
 		_health = _health - 10
 		emit_signal("character_stats_changed",self)

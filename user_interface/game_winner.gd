@@ -11,9 +11,9 @@ func _process(_delta):
 	pass
 
 
-func _on_start_pressed():
+func _on_restart_pressed():
 	get_tree().change_scene_to_file("res://levels/scenes/teste_level.tscn")
-	Dialogic.start("introduction")
+
 
 func _on_quit_pressed():
 	get_tree().quit()

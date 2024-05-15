@@ -30,6 +30,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "aviso": "res://timelines/aviso.dtl",
 "instruction_mission": "res://timelines/timeline/instruction_mission.dtl",
+"introduction": "res://timelines/timeline/introduction.dtl",
 "mission_incomplete": "res://timelines/timeline/mission_incomplete.dtl",
 "mission_passed": "res://timelines/timeline/mission_passed.dtl",
 "treatment": "res://timelines/timeline/treatment.dtl",

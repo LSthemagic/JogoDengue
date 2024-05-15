@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://epe7ia078oo8"]
+
+[ext_resource type="Texture2D" uid="uid://bjstsxavgveko" path="res://assets/game_winer.jpg" id="1_26b7x"]
+[ext_resource type="Script" path="res://user_interface/game_winner.gd" id="1_68fpv"]
+[ext_resource type="Texture2D" uid="uid://bh76g1myve41a" path="res://assets/logo.png" id="2_6q6ol"]
+[ext_resource type="Texture2D" uid="uid://c802oo083ec33" path="res://assets/person_winner.png" id="3_cdfri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh3fv"]
+bg_color = Color(0, 0.290196, 0, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.89515e-07, 0.24758, 5.29438e-07, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7om3"]
+bg_color = Color(0, 0.435294, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.89515e-07, 0.24758, 5.29438e-07, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.678431)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrus3"]
+bg_color = Color(0.605676, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.376471, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxoti"]
+bg_color = Color(0.545098, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.376471, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.678431)
+shadow_size = 2
+
+[node name="game_winner" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_68fpv")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 319.0
+offset_bottom = 183.0
+texture = ExtResource("1_26b7x")
+expand_mode = 3
+
+[node name="logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 83.0
+texture = ExtResource("2_6q6ol")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 8.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="restart" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_mh3fv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k7om3")
+text = "Jogar novamente"
+
+[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mrus3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sxoti")
+text = "Sair do jogo"
+
+[node name="person" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_cdfri")
+expand_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
