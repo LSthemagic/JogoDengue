@@ -1,9 +1,9 @@
 main_person (Zé Godot): Olá doutor Drauzio, digo Grauzio.\
 Bem estou com alguns sintomas preocupantes e gostaria da sua ajuda, se possível.
-\doctor_person (Dr. Grauzio Galot): Bem engraçado Zé. Descreva o que está sentindo, por favor.
+\doctor_person (Dr. Grauzio Galot): Bem engraçado, Zé. Descreva o que está sentindo, por favor.
 main_person (Zé Godot): Estou com febre alta, fortes dores musculares, dor de cabeça intensa, fadiga e fraqueza, além de perda de apetite.
 \doctor_person (Dr. Grauzio Galot): Parece que você pode estar com dengue. Além desses sintomas, você percebeu mais alguma coisa?
-main_person (Zé Godot): Não, doutor, apenas esses que mencionei. O que devo fazer?
+main_person (Zé Godot): Não doutor, apenas esses que mencionei. O que devo fazer?
 \doctor_person (Dr. Grauzio Galot): Primeiramente, descanse bastante e mantenha-se hidratado. Beba água, sucos naturais e água de coco, evitando cafeína, que pode desidratar ainda mais.
 main_person (Zé Godot): E em relação à medicação, doutor, o que o senhor recomenda?
 \doctor_person (Dr. Grauzio Galot): Para a febre e a dor, você pode tomar paracetamol. No entanto, evite aspirina ou anti-inflamatórios não esteroides, pois podem aumentar o risco de complicações hemorrágicas em casos de dengue.
